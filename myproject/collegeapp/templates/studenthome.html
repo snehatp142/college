@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>student home Home</h1>
+    <a href="{% url 'logouts' %}">Logout</a> <br> <br>
+    <a href="{% url 'student_dashboard'  %}">Teacher details</a>
+    
+   
+
+    
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            padding: 20px 0;
+            background-color: #2c3e50;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            text-align: center;
+        }
+
+        .nav-links a {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 12px;
+            font-size: 18px;
+            color: white;
+            background-color: #3498db;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #2980b9;
+        }
+
+        .nav-links a:active {
+            background-color: #1d618f;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Student Home</h1>
+
+    <div class="container">
+        <div class="nav-links">
+            <a href="{% url 'logouts' %}">Logout</a><br><br>
+            <a href="{% url 'student_dashboard' %}">View Teacher Details</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

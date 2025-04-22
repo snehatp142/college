@@ -1,0 +1,78 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff List</title>
+</head>
+<body>
+    {% for st in staff %}
+        <p>{{ st.name }}</p>
+        <img src="{{ st.photo.url }}" width="100" height="100" alt="Staff Photo">
+    {% endfor %}
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .staff-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .staff-card {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+
+        .staff-card img {
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .staff-card p {
+            font-size: 18px;
+            color: #34495e;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Staff List</h1>
+
+    <div class="staff-container">
+        {% for st in staff %}
+        <div class="staff-card">
+            <img src="{{ st.photo.url }}" width="100" height="100" alt="Staff Photo">
+            <p>{{ st.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,126 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="{% url 'updateteacher1' teacher.id %}" method="POST">
+
+
+
+        {% csrf_token %}
+        FirstName: <input type="text" name="fname" value="{{user1.first_name}}"><br>
+        LastName: <input type="text" name="lname" value="{{user1.last_name}}"><br>
+        Email: <input type="text" name="email" value="{{user1.email}}"><br>
+
+        phone: <input type="text" name="phone" value="{{teacher.phone}}"><br>
+        Qualification: <input type="text" name="qual" value="{{teacher.Qualification}}"><br>
+        <input type="submit" value="Update">
+
+    </form>
+    
+</body>
+</html> {% endcomment %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Teacher Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container p {
+            text-align: center;
+            font-size: 18px;
+            color: #e74c3c;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h2>Update Teacher Profile</h2>
+
+    <div class="form-container">
+        <form action="{% url 'updateteacher1' teacher.id %}" method="POST">
+            {% csrf_token %}
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" value="{{ user1.first_name }}" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" value="{{ user1.last_name }}" required>
+
+            <label for="email">Email:</label>
+            <input type="text" name="email" value="{{ user1.email }}" required>
+
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" value="{{ teacher.phone }}" required>
+
+            <label for="qual">Qualification:</label>
+            <input type="text" name="qual" value="{{ teacher.Qualification }}" required>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+</body>
+</html>

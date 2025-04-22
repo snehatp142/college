@@ -1,0 +1,97 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="staff_register" method="POST" enctype="multipart/form-data">
+        {%  csrf_token   %}
+        <label for="">NAME</label>
+        <input type="text" name="name" id="">
+        <label for="">PHOTO</label>
+        <input type="file" name="photo" id="">
+        <input type="submit" name="REGISTER" id="">
+     </form>
+</body>
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Registration</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 16px;
+            color: #34495e;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>Staff Registration</h1>
+
+    <div class="form-container">
+        <form action="staff_register" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="name">NAME</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="photo">PHOTO</label>
+            <input type="file" name="photo" id="photo" required>
+
+            <input type="submit" value="REGISTER">
+        </form>
+    </div>
+</body>
+</html>

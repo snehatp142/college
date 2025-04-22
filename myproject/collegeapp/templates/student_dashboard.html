@@ -1,0 +1,98 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% else %}
+    <h2>Teachers in Your Department</h2>
+    {% if teachers %}
+        <ul>
+            {% for teacher in teachers %}
+                <li>{{ teacher.teach_id.username }} - {{ teacher.dep_id.Dep_Name }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No teachers available for your department.</p>
+    {% endif %}
+{% endif %}
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+
+        li:hover {
+            background-color: #3498db;
+            color: white;
+        }
+
+        p {
+            color: #e74c3c;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .no-teachers {
+            text-align: center;
+            font-size: 18px;
+            color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% else %}
+        <h2>Teachers in Your Department</h2>
+
+        {% if teachers %}
+            <ul>
+                {% for teacher in teachers %}
+                    <li>{{ teacher.teach_id.username }} - {{ teacher.dep_id.Dep_Name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-teachers">No teachers available for your department.</p>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>
+

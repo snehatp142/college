@@ -1,0 +1,143 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+</head>
+<body>
+    
+    <h2>Teacher Dashboard</h2>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% else %}
+        <h3>Department: {{ teacher.dep_id.Dep_Name }}</h3>
+
+        <h3>Students List</h3>
+        {% if students %}
+            <table border="1">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Place</th>
+                </tr>
+                {% for student in students %}
+                <tr>
+                    <td>{{ student.stud_id.first_name }} {{ student.stud_id.last_name }}</td>
+                    <td>{{ student.stud_id.email }}</td>
+                    <td>{{ student.Phone }}</td>
+                    <td>{{ student.place }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No students found in your department.</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #e74c3c;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        td {
+            background-color: #ecf0f1;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #d5dbdb;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Teacher Dashboard</h2>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% else %}
+        <h3>Department: {{ teacher.dep_id.Dep_Name }}</h3>
+
+        <h3>Students List</h3>
+        {% if students %}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Place</th>
+                </tr>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student.stud_id.first_name }} {{ student.stud_id.last_name }}</td>
+                        <td>{{ student.stud_id.email }}</td>
+                        <td>{{ student.Phone }}</td>
+                        <td>{{ student.place }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No students found in your department.</p>
+        {% endif %}
+    {% endif %}
+
+</body>
+</html>

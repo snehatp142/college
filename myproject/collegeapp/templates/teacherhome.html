@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teacher Home</h1>
+    <a href="{% url 'logouts' %}">logout</a> <br> <br>
+
+    <a href="{% url 'updateteacher'   %}">Update</a>
+    <br>
+    <a href="{% url 'teacher_dashboard'  %}">student details</a>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Home</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            margin: 0;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            text-align: center;
+        }
+
+        .nav-links a {
+            display: block;
+            margin: 15px 0;
+            padding: 12px;
+            font-size: 18px;
+            color: white;
+            background-color: #2196F3;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            background-color: #0b7dda;
+        }
+
+        .nav-links a:active {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to Teacher Home</h1>
+
+    <div class="container">
+        <div class="nav-links">
+            <a href="{% url 'logouts' %}">Logout</a>
+            <a href="{% url 'updateteacher' %}">Update Profile</a>
+            <a href="{% url 'teacher_dashboard' %}">View Student Details</a>
+        </div>
+    </div>
+
+</body>
+</html>
